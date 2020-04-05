@@ -115,7 +115,9 @@ endfunction
 
 
 function! s:use_plug_()
-
+	" echo '-->' expand($VIM_PATH . '/autoload/plug.vim')
+	" echo '-->' empty(glob($VIM_PATH . '/autoload/plug.vim'))
+	" echo '-->' empty(expand($VIM_PATH . '/autoload/plugin.vim'))
 	if empty(glob($VIM_PATH . '/autoload/plug.vim'))
 		silent !curl -fLo $VIM_PATH/autoload/plug.vim --create-dirs
 					\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -128,7 +130,7 @@ function! s:use_plug_()
 	" 	return
 	" endif
 
-	call s:source_file($VIM_PATH . '/config/local.plugins.vim')
+	execute 'source' expand($VIM_PATH . '/config/local.plugins.vim')
 	" call plug#begin(l:cache_repos)
 	" for plugin in l:rc
 	" 	call plug#(plugin['repo'], extend(plugin, {}, 'keep'))

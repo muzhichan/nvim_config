@@ -1,6 +1,32 @@
-call plug#begin('~/.local/share/nvim/plugged')
+let s:plugins_dir = expand($DATA_PATH . "/plug/repo")
 
+call plug#begin(s:plugins_dir)
 
+echo "loading plugins ..."
+
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rafi/awesome-vim-colorschemes'
+
+Plug 'itchyny/vim-gitbranch'
+
+Plug 'Shougo/context_filetype.vim'
+
+if ! (has('win32') || has('win64'))
+	Plug 'christoomey/vim-tmux-navigator'
+endif
+
+Plug 'tpope/vim-sleuth'
+Plug 'liuchengxu/vim-clap'
+
+if has('nvim')
+  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+  execute 'source' expand($VIM_PATH . '/config/plugins/defx.vim')
+else
+  Plug 'Shougo/defx.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " Plug 'jremmen/vim-ripgrep'
 " Plug 'mattn/emmet-vim'
