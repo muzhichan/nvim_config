@@ -11,7 +11,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'itchyny/vim-gitbranch'
 
 Plug 'Shougo/context_filetype.vim'
-
+Plug 'wellle/visual-split.vim'
 if ! (has('win32') || has('win64'))
 	Plug 'christoomey/vim-tmux-navigator'
 endif
@@ -21,13 +21,15 @@ Plug 'liuchengxu/vim-clap'
 
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-  execute 'source' expand($VIM_PATH . '/config/plugins/defx.vim')
+  " execute 'source' expand($VIM_PATH . '/config/plugins/defx.vim')
 else
   Plug 'Shougo/defx.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+Plug 'kristijanhusak/defx-git'
+Plug 'kristijanhusak/defx-icons'
 " Plug 'jremmen/vim-ripgrep'
 " Plug 'mattn/emmet-vim'
 " Plug 'scrooloose/nerdtree'
@@ -49,7 +51,7 @@ endif
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Plug 'neomake/neomake'
-" Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 " Plug 'vim-scripts/wildfire.vim'
 " Plug 'yonchu/accelerated-smooth-scroll'
 " Plug 'TimothyYe/vim-ydict'

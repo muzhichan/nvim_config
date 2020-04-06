@@ -1,7 +1,6 @@
 " :h defx
 " ---
 " Problems? https://github.com/Shougo/defx.nvim/issues
-
 call defx#custom#option('_', {
 	\ 'winwidth': 25,
 	\ 'split': 'vertical',
