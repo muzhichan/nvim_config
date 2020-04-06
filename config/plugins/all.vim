@@ -28,12 +28,12 @@ if 1
 	let g:airline#extensions#tabline#show_tab_type=0
 	" muzhi end
 	function! ArilineInit()
-			let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
-			let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%F'])
-			"let g:airline_section_c = airline#section#create(['filetype'])
-			let g:airline_section_x = airline#section#create(['%P'])
-			let g:airline_section_y = airline#section#create(['%B'])
-			let g:airline_section_z = airline#section#create_right(['%l', '%c'])
+		let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
+		let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%F'])
+		"let g:airline_section_c = airline#section#create(['filetype'])
+		let g:airline_section_x = airline#section#create(['%P'])
+		let g:airline_section_y = airline#section#create(['%B'])
+		let g:airline_section_z = airline#section#create_right(['%l', '%c'])
 	endfunction
 	let g:airline_section_z = '%3p%% %3l/%L:%3v'
 endif
@@ -104,4 +104,24 @@ if 1
 		\ :<C-u>Defx -resume -toggle -buffer-name=tab`tabpagenr()`<CR>
 	nnoremap <silent> <LocalLeader>a
 		\ :<C-u>Defx -resume -buffer-name=tab`tabpagenr()` -search=`expand('%:p')`<CR>
+endif
+
+
+"" ncm2 --> ncm2/ncm2-pyclang
+if 1
+	let g:ncm2_pyclang#library_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+endif
+
+"" ack.vim
+" 用 ,a 搜索当前 cursor 下单词
+if executable('ag')
+    noremap <leader>a :Ag! -w "<cword>"<cr>
+else
+    noremap <Leader>a :Ack <cword><cr>
+endif
+
+"" fzf.vim
+if 1
+	nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+	nnoremap <silent> <c-p> :Files <CR>
 endif

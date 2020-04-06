@@ -94,7 +94,8 @@ function! s:main()
 			if empty(l:virtualenv) || ! filereadable(l:virtualenv)
 				" Fallback to old virtualenv location
 				"let l:virtualenv = $DATA_PATH . '/venv/neovim3/bin/python'
-				let l:virtualenv = '/root/.pyenv/versions/' . l:py_version . '/bin/python'
+				" let l:virtualenv = '/root/.pyenv/versions/' . l:py_version . '/bin/python'
+				let l:virtualenv = '/Users/muzhi/.pyenv/versions/' . l:py_version . '/bin/python'
 			endif
 			if filereadable(l:virtualenv)
 				let g:python3_host_prog = l:virtualenv
@@ -131,7 +132,11 @@ function! s:use_plug_()
 	" endif
 
 	execute 'source' expand($VIM_PATH . '/config/local.plugins.vim')
-  execute 'source' expand($VIM_PATH . '/config/plugins/defx.vim')
+	execute 'source' expand($VIM_PATH . '/config/plugins/all.vim')
+	" --- config/plugins ---
+  	execute 'source' expand($VIM_PATH . '/config/plugins/defx.vim')
+	execute 'source' expand($VIM_PATH . '/config/plugins/coc.vim')
+
 	" call plug#begin(l:cache_repos)
 	" for plugin in l:rc
 	" 	call plug#(plugin['repo'], extend(plugin, {}, 'keep'))
