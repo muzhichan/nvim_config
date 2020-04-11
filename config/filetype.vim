@@ -67,6 +67,10 @@ augroup user_plugin_filetype " {{{
 		\ setlocal expandtab smarttab nosmartindent
 		\ | setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80
 
+	autocmd FileType cpp
+		\ setlocal expandtab smarttab nosmartindent
+		\ | setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80
+
 	autocmd FileType html setlocal path+=./;/
 
 	autocmd FileType markdown
