@@ -28,6 +28,17 @@ fc-cache -f -v
 fc-list | grep "Hack"
 ```
 
+安装 `Sauce Code Pro Nerd Font`:
+```
+1. 到 https://www.nerdfonts.com/font-downloads 下载对应字体
+
+2. unzip and mv to [~/.local/share/fonts/]
+
+3. fc-cache -vf ~/.local/share/fonts/
+
+4. terminal config it
+```
+
 [buffers, tabs, windows & modes](http://springest.io/vim-buffers-tabs-windows-and-modes)
 [buffer](https://harttle.land/2015/11/17/vim-buffer.html)
 
