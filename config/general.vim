@@ -300,4 +300,16 @@ endif
 
 " }}}
 
+
+" Terminal Behavior {{{
+" --------------------
+let g:neoterm_autoscroll = 1
+autocmd TermOpen term://* startinsert
+"tnoremap <C-N> <C-\><C-N> :q<CR>
+"tnoremap <C-N> <C-\><C-N>
+"tnoremap <Esc> <C-\><C-n>
+nnoremap <leader>T :botright vs term://$SHELL<CR>
+nnoremap <leader>t :botright split term://$SHELL<CR>
+" }}}
+
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

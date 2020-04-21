@@ -109,7 +109,8 @@ endif
 
 "" ncm2 --> ncm2/ncm2-pyclang
 if 1
-	let g:ncm2_pyclang#library_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+	" let g:ncm2_pyclang#library_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+	let g:ncm2_pyclang#library_path='/usr/lib64/clang-private/libclang.so'
 endif
 
 "" ack.vim

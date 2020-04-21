@@ -13,6 +13,8 @@ Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'itchyny/vim-gitbranch'
 
+Plug 'scrooloose/nerdcommenter'
+
 Plug 'Shougo/context_filetype.vim'
 " Plug 'wellle/visual-split.vim'
 if ! (has('win32') || has('win64'))

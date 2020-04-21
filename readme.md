@@ -3,6 +3,8 @@
 
 * pip install -U pynvim neovim
 
+* neovim version >= 0.4
+
 * `:checkhealth`，查看安装环境情况
 
 * coc.nvim 需要 node(centos 下注意升级以下 node 版本，使用 n 管理 node 版本)。coc.vim 在装完 ncm2 系列后执行：`:CocCommand -> python.setInterpreter` 选取对应环境即可。如果显示 python.setInterpreter not found，试试 `:CocInstall coc-python`，然后打开一个 python 文件在进行上述操作，可能是 ncm2 造成的。
@@ -32,14 +34,18 @@ fc-list | grep "Hack"
 ## mapping
 
 在Vim中有很多默认的方式可以退出插入模式：
-* <esc>
-* <c-c>
-* <c-[>
+```
+<esc>
+<c-c>
+<c-[>
+
+terminal esc: <C-\><C-n>
+```
 
 ## customes mapping
 ```
-	let g:mapleader=","
-	let g:maplocalleader=';'
+let g:mapleader=","
+let g:maplocalleader=';'
 
 <leader>b  关闭当前 buf
 <leader>w  写入文件
