@@ -297,9 +297,16 @@ if has("multi_byte")
     set formatoptions+=mM
     set fencs=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 endif
-
 " }}}
 
+" change tab {{{
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+" }}}
+
+" 切换 buffer
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> [n :bnext<CR>
 
 " Terminal Behavior {{{
 " --------------------

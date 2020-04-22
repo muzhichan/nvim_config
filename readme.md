@@ -58,10 +58,13 @@ terminal esc: <C-\><C-n>
 let g:mapleader=","
 let g:maplocalleader=';'
 
-<leader>b  关闭当前 buf
 <leader>w  写入文件
 ```
 ## plugin install and use
+
+### vim-gutentags
+
+[reference](https://zhuanlan.zhihu.com/p/43671939)
 
 ## vim 理解
 
