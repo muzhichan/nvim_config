@@ -79,5 +79,9 @@ Plug 'ncm2/ncm2-path'
 " for languages
 Plug 'ncm2/ncm2-jedi'     "for python
 Plug 'ncm2/ncm2-pyclang'  "for cpp
+""""""""
+" ctags --> tags
+""""""""
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
