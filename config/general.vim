@@ -242,6 +242,8 @@ set laststatus=2        " Always show a status line
 set colorcolumn=+0      " Column highlight at textwidth's max character-limit
 set display=lastline
 
+set showmatch
+
 if has('folding') && has('vim_starting')
 	set foldenable
 	set foldmethod=indent
@@ -302,6 +304,9 @@ endif
 " change tab {{{
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
+" https://stackoverflow.com/questions/15583346/how-can-i-temporarily-make-the-window-im-working-on-to-be-fullscreen-in-vim
+nnoremap tt :tab split<CR>
+
 " }}}
 
 " 切换 buffer

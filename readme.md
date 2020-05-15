@@ -39,8 +39,32 @@ fc-list | grep "Hack"
 4. terminal config it
 ```
 
-[buffers, tabs, windows & modes](http://springest.io/vim-buffers-tabs-windows-and-modes)
-[buffer](https://harttle.land/2015/11/17/vim-buffer.html)
+## use
+
+### buffer/window/tab
+
+* [buffers, tabs, windows & modes](http://springest.io/vim-buffers-tabs-windows-and-modes)
+* [buffer](https://harttle.land/2015/11/17/vim-buffer.html)
+
+> **buffers**: A buffer in Vim is an open instance of a file. This means that the file may not be visible on the current screen, but it is saved somewhere in memory.
+
+* tab 常用操作
+  * :tabe -- eOpen a new tab
+  * :tabe [file] -- Open a new tab with [file]
+  * :tabc -- Close current tab
+  * :gt -- Move to next tab
+  * :gT -- Move to previous tab
+
+* window 常用操作
+  * :split -- horizon split screen
+  * :vsplit -- vertical split screen
+  * :split [file] -- split and open with file
+
+* buffer 常用操作
+  * :buf 2 -- second buffer
+  * :bn -- next buffer
+  * :bp -- previous buffer
+  * :bd -- close current buffer
 
 ## mapping
 
@@ -53,22 +77,57 @@ fc-list | grep "Hack"
 terminal esc: <C-\><C-n>
 ```
 
-## customes mapping
 ```
 let g:mapleader=","
 let g:maplocalleader=';'
 
 <leader>w  写入文件
 ```
-## plugin install and use
 
-### vim-gutentags
+## plugin and leverage
+
+### 补全
+
+#### Language Server Client
+
+1. LanguageClient-neovim
+
+异步，python 插件，支持大部分 language server 操作，支持 deoplete 和 ncm2 两个补全框架。
+
+2. vim-lsp
+
+异步，纯 vim script 插件，支持 asyncomplete, deoplete 和 ncm2 三个补全框架，部分 lsp 支持有问题。
+
+3. coc.nvim
+
+异步，nodejs 后端，全部 language server 操作，支持 coc.nvim 本身的补全框架。
+
+
+### 安装与使用
+
+```
+vim-gutentags
 
 [reference](https://zhuanlan.zhihu.com/p/43671939)
+```
 
-## vim 理解
+```
+'scrooloose/nerdcommenter'
 
-### buffer/window/tab
+# <leader>c<space> 注释/取消注释
+# <leader>cc // 注释
+# <leader>cm 只用一组符号注释
+# <leader>cA 在行尾添加注释
+# <leader>c$ /* 注释 */
+# <leader>cs /* 块注释 */
+# <leader>cy 注释并复制
+# <leader>ca 切换　// 和 /* */
+# <leader>cu 取消注释
+```
 
-> **buffers**: A buffer in Vim is an open instance of a file. This means that the file may not be visible on the current screen, but it is saved somewhere in memory.
+## refs
+
+* [1](https://zhuanlan.zhihu.com/p/29936003)
+* [2](https://www.zhihu.com/question/23590572/answer/546352496)
+* [3](https://juejin.im/post/5cdc396af265da03576ee968)
 

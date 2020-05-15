@@ -33,7 +33,7 @@ let g:loaded_vimball = 1
 let g:loaded_vimballPlugin = 1
 
 let g:loaded_matchit = 1
-let g:loaded_matchparen = 1
+let g:loaded_matchparen = 0
 let g:loaded_2html_plugin = 1
 let g:loaded_logiPat = 1
 let g:loaded_rrhelper = 1
@@ -83,24 +83,26 @@ function! s:main()
 		endfor
 
 		" Python interpreter settings
-        " Python 解释器配置
-        let l:py_version = '3.6.5'
-		if has('nvim')
+    " Python 解释器配置
+    " let l:py_version = '3.6.5'
+		" if has('nvim')
 			" Try using pyenv virtualenv called 'neovim'
-			let l:virtualenv = ''
-			if ! empty($PYENV_ROOT)
-				let l:virtualenv = $PYENV_ROOT . '/versions/' . l:py_version . '/bin/python'
-			endif
-			if empty(l:virtualenv) || ! filereadable(l:virtualenv)
+		"   let l:virtualenv = ''
+		"   if ! empty($PYENV_ROOT)
+		"     let l:virtualenv = $PYENV_ROOT . '/versions/' . l:py_version . '/bin/python'
+		"   endif
+		"   if empty(l:virtualenv) || ! filereadable(l:virtualenv)
 				" Fallback to old virtualenv location
 				"let l:virtualenv = $DATA_PATH . '/venv/neovim3/bin/python'
 				" let l:virtualenv = '/root/.pyenv/versions/' . l:py_version . '/bin/python'
-				let l:virtualenv = '/Users/muzhi/.pyenv/versions/' . l:py_version . '/bin/python'
-			endif
-			if filereadable(l:virtualenv)
-				let g:python3_host_prog = l:virtualenv
-			endif
-
+		"     let l:virtualenv = '/Users/muzhi/.pyenv/versions/' . l:py_version . '/bin/python'
+		"   endif
+		"   if filereadable(l:virtualenv)
+		"     let g:python3_host_prog = l:virtualenv
+		 "  endif
+		if has('nvim')
+			"let g:python3_host_prog = system("which python")
+			let g:python3_host_prog = '/Users/muzhi/.pyenv/versions/' . '3.6.5' . '/bin/python'
 		elseif has('pythonx')
 			if has('python3')
 				set pyxversion=3
@@ -108,6 +110,7 @@ function! s:main()
 				set pyxversion=2
 			endif
 		endif
+		
 	endif
 
 	" Initializes chosen package manager

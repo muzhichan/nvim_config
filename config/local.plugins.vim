@@ -36,6 +36,9 @@ endif
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
 
+" 语法高亮
+Plug 'sheerun/vim-polyglot'
+
 " ==========================================
 " 快速编辑
 " ========
@@ -53,11 +56,12 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-" Use release branch (Recommend)
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" " Or build from source code by use yarn: https://yarnpkg.com
-" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" ============================================
+" Language Server Protocol and autocompletion
+" ============================================
+
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " ==========================================
 " Completion and code analysis

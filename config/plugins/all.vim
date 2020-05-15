@@ -1,5 +1,6 @@
 "" vim-airline
-if 1
+let s:plugins_dir = expand($DATA_PATH . "/plug/repo")
+if isdirectory(expand(s:plugins_dir . '/vim-airline'))
     let g:airline_powerline_fonts=1
     let g:airline_theme = 'wombat'
     " let g:airline_theme = 'molokai'
@@ -39,12 +40,12 @@ if 1
 endif
 
 "" vim-sleuth
-if 1
+if isdirectory(expand(s:plugins_dir . '/vim-sleuth'))
     let g:sleuth_neighbor_limit = 5
 endif
 
 "" vim-clap
-if 1
+if isdirectory(expand(s:plugins_dir . '/vim-clap'))
     let g:clap_cache_directory = $DATA_PATH . '/clap'
     let g:clap_theme = 'material_design_dark'
     let g:clap_layout = { 'relative': 'editor' }
@@ -55,7 +56,7 @@ if 1
     highlight! link ClapMatches Function
     highlight! link ClapNoMatchesFound WarningMsg
 endif
-if 1
+if isdirectory(expand(s:plugins_dir . '/vim-clap'))
     " nnoremap <silent><LocalLeader>f :<C-u>Clap! files<CR>
     " nnoremap <silent><LocalLeader>b :<C-u>Clap! buffers<CR>
     " nnoremap <silent><LocalLeader>g :<C-u>Clap! grep<CR>
@@ -99,7 +100,7 @@ if 1
 endif
 
 "" defx.nvim
-if 1
+if isdirectory(expand(s:plugins_dir . '/defx.nvim'))
     nnoremap <silent> <LocalLeader>e
 	\ :<C-u>Defx -resume -toggle -buffer-name=tab`tabpagenr()`<CR>
     nnoremap <silent> <LocalLeader>a
@@ -108,7 +109,7 @@ endif
 
 
 "" ncm2 --> ncm2/ncm2-pyclang
-if 1
+if isdirectory(expand(s:plugins_dir . '/ncm2'))
     if has('mac')
 	let g:ncm2_pyclang#library_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
     endif
@@ -126,14 +127,14 @@ else
 endif
 
 "" fzf.vim
-if 1
+if isdirectory(expand(s:plugins_dir . '/fzf.vim'))
     nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
     nnoremap <silent> <c-p> :Files <CR>
     nnoremap <silent> <Leader>b :Buffers<CR>
 endif
 
 "" vim-gutentags
-if 1
+if isdirectory(expand(s:plugins_dir . '/vim-gutentags'))
     " gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
     let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
 
@@ -153,3 +154,17 @@ if 1
     let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
     let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 endif
+
+" nerdcommenter
+if isdirectory(expand(s:plugins_dir . '/nerdcommenter'))
+    let g:NERDSpaceDelims = 1
+    let g:NERDDefaultAlign = 'left'
+    let g:NERDCustomDelimiters = {
+		\ 'javascript': { 'left': '//', 'leftAlt': '/**', 'rightAlt': '*/' },
+		\ 'less': { 'left': '/**', 'right': '*/' }
+	    \ }
+
+    let g:NERDAltDelims_javascript = 1
+    let g:NERDDefaultNesting = 0
+endif
+
