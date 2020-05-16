@@ -120,11 +120,14 @@ endif
 
 "" ack.vim
 " 用 ,a 搜索当前 cursor 下单词
-if executable('ag')
-    noremap <leader>a :Ag! -w "<cword>"<cr>
-else
+if isdirectory(expand(s:plugins_dir . '/ack.vim'))
     noremap <Leader>a :Ack <cword><cr>
 endif
+" if executable('ag')
+    " noremap <leader>a :Ag! -w "<cword>"<cr>
+" else
+    " noremap <Leader>a :Ack <cword><cr>
+" endif
 
 "" fzf.vim
 if isdirectory(expand(s:plugins_dir . '/fzf.vim'))

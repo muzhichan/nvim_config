@@ -102,7 +102,11 @@ function! s:main()
 		 "  endif
 		if has('nvim')
 			"let g:python3_host_prog = system("which python")
-			let g:python3_host_prog = '/Users/muzhi/.pyenv/versions/' . '3.6.5' . '/bin/python'
+			if has('mac')
+				let g:python3_host_prog = '/Users/muzhi/.pyenv/versions/' . '3.6.5' . '/bin/python'
+			elseif has('unix')
+				let g:python3_host_prog = '/home/260249/.pyenv/versions/' . '3.6.5' . '/bin/python'
+			endif
 		elseif has('pythonx')
 			if has('python3')
 				set pyxversion=3
