@@ -166,7 +166,8 @@ function! s:defx_mappings() abort
 
 	" Change directory
 	nnoremap <silent><buffer><expr><nowait> \  defx#do_action('cd', getcwd())
-	nnoremap <silent><buffer><expr><nowait> &  defx#do_action('cd', getcwd())
+	" nnoremap <silent><buffer><expr><nowait> &  defx#do_action('cd', getcwd())
+	nnoremap <silent><buffer><expr><nowait> & defx#do_action('cd', defx#get_candidate().action__path)
 	nnoremap <silent><buffer><expr> <BS>  defx#async_action('cd', ['..'])
 	nnoremap <silent><buffer><expr> ~     defx#async_action('cd')
 	nnoremap <silent><buffer><expr> u   defx#do_action('cd', ['..'])
@@ -205,7 +206,7 @@ function! s:find_files(context) abort
 	let l:target = a:context['targets'][0]
 	let l:parent = fnamemodify(l:target, ':h')
 	silent execute 'wincmd w'
-	silent execute 'Denite file/rec:'.l:parent
+	silent execute 'Files '.l:parent
 endfunction
 
 function! s:grep(context) abort
@@ -213,7 +214,7 @@ function! s:grep(context) abort
 	let l:target = a:context['targets'][0]
 	let l:parent = fnamemodify(l:target, ':h')
 	silent execute 'wincmd w'
-	silent execute 'Denite grep:'.l:parent
+	silent execute 'Files grep:'.l:parent
 endfunction
 
 function! s:toggle_width(context) abort

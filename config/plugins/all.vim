@@ -107,6 +107,12 @@ if isdirectory(expand(s:plugins_dir . '/defx.nvim'))
 	\ :<C-u>Defx -resume -buffer-name=tab`tabpagenr()` -search=`expand('%:p')`<CR>
 endif
 
+"" g:indentLine
+if isdirectory(expand(s:plugins_dir . '/indentLine'))
+    let g:indentLine_fileTypeExclude = ['defx']
+    let g:indentLine_setConceal = 0
+    let g:indentLine_concealcursor = ''
+endif
 
 "" ncm2 --> ncm2/ncm2-pyclang
 if isdirectory(expand(s:plugins_dir . '/ncm2'))
@@ -121,7 +127,7 @@ endif
 "" ack.vim
 " 用 ,a 搜索当前 cursor 下单词
 if isdirectory(expand(s:plugins_dir . '/ack.vim'))
-    noremap <Leader>a :Ack <cword><cr>
+    noremap <Leader>ac :Ack <cword><cr>
 endif
 " if executable('ag')
     " noremap <leader>a :Ag! -w "<cword>"<cr>
@@ -131,7 +137,7 @@ endif
 
 "" fzf.vim
 if isdirectory(expand(s:plugins_dir . '/fzf.vim'))
-    nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+    nnoremap <silent> <Leader>a :Ag <C-R><C-W><CR>
     nnoremap <silent> <c-p> :Files <CR>
     nnoremap <silent> <Leader>b :Buffers<CR>
 endif
@@ -171,3 +177,32 @@ if isdirectory(expand(s:plugins_dir . '/nerdcommenter'))
     let g:NERDDefaultNesting = 0
 endif
 
+if isdirectory(expand(s:plugins_dir . '/rainbow_parentheses.vim'))
+    let g:rbpt_colorpairs = [
+	\ ['brown',       'RoyalBlue3'],
+	\ ['Darkblue',    'SeaGreen3'],
+	\ ['darkgray',    'DarkOrchid3'],
+	\ ['darkgreen',   'firebrick3'],
+	\ ['darkcyan',    'RoyalBlue3'],
+	\ ['darkred',     'SeaGreen3'],
+	\ ['darkmagenta', 'DarkOrchid3'],
+	\ ['brown',       'firebrick3'],
+	\ ['gray',        'RoyalBlue3'],
+	\ ['darkmagenta', 'DarkOrchid3'],
+	\ ['Darkblue',    'firebrick3'],
+	\ ['darkgreen',   'RoyalBlue3'],
+	\ ['darkcyan',    'SeaGreen3'],
+	\ ['darkred',     'DarkOrchid3'],
+	\ ['red',         'firebrick3'],
+	\ ]
+
+    " 不加入这行, 防止黑色括号出现, 很难识别
+    " \ ['black',       'SeaGreen3'],
+
+    let g:rbpt_max = 16
+    let g:rbpt_loadcmd_toggle = 0
+    au VimEnter * RainbowParenthesesToggle
+    au Syntax * RainbowParenthesesLoadRound
+    au Syntax * RainbowParenthesesLoadSquare
+    au Syntax * RainbowParenthesesLoadBraces
+endif

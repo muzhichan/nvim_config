@@ -8,10 +8,13 @@ Plug 'mhinz/vim-startify'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'  " use coc-pairs
 Plug 'kien/rainbow_parentheses.vim'
 
+Plug 'Yggdroot/indentLine'
+
 Plug 'itchyny/vim-gitbranch'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'scrooloose/nerdcommenter'
 
@@ -24,6 +27,8 @@ endif
 Plug 'tpope/vim-sleuth'
 Plug 'liuchengxu/vim-clap'
 
+"""""
+"""""defx
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
   " execute 'source' expand($VIM_PATH . '/config/plugins/defx.vim')
@@ -70,19 +75,25 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 """""""""
 " ncm2
 """""""""
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
+" Plug 'ncm2/ncm2'
+" Plug 'roxma/nvim-yarp'
 " enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" autocmd BufEnter * call ncm2#enable_for_buffer()
 " IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
+" set completeopt=noinsert,menuone,noselect
 " NOTE: you need to install completion sources to get completions. Check
 " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-path'
 " for languages
-Plug 'ncm2/ncm2-jedi'     "for python
-Plug 'ncm2/ncm2-pyclang'  "for cpp
+" Plug 'ncm2/ncm2-jedi'     "for python
+" Plug 'ncm2/ncm2-pyclang'  "for cpp
+" inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+" Use <TAB> to select the popup menu:
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 """"""""
 " ctags --> tags
 """"""""

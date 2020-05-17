@@ -41,6 +41,16 @@ fc-list | grep "Hack"
 
 ## use
 
+### general
+
+```
+:se autochdir  --  含有打开的文件，这将自动切换到该目录
+
+:cd %:h  --  切换到包含当前打开文件的目录
+
+:echo getcwd()
+```
+
 ### buffer/window/tab
 
 * [buffers, tabs, windows & modes](http://springest.io/vim-buffers-tabs-windows-and-modes)
@@ -102,6 +112,16 @@ let g:maplocalleader=';'
 
 异步，nodejs 后端，全部 language server 操作，支持 coc.nvim 本身的补全框架。
 
+3.1 c/cpp completion
+
+[ccls](https://github.com/MaskRay/ccls) + coc.nvim
+
+补全配置，使用 clang，可能出现头文件找不到的情况，解决方案如下：
+
+* [S 1](https://github.com/MaskRay/ccls/wiki/FAQ#some-cc-headers-are-not-recognized)
+* [S 2](https://github.com/MaskRay/ccls/wiki/Install#clang-resource-directory)
+* [S 3](https://www.reddit.com/r/neovim/comments/e6uhhf/using_ccls_server_with_cocnvim_for_c_development/)
+* [S 4](https://ianding.io/2019/07/29/configure-coc-nvim-for-c-c++-development/)
 
 ### 安装与使用
 
