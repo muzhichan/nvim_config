@@ -14,26 +14,14 @@
       ],
       "initializationOptions": {
         "cache": {
-          "directory": "/Users/muzhi/.cache/ccls-cache"
+          "directory": "/home/260249/.cache/ccls-cache"
         },
         "client": {
           "snippetSupport": true
         },
         "clang": {
-          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0",
+          "resourceDir": "/opt/rh/llvm-toolset-7.0/root/usr/lib64/clang/7.0.1",
           "extraArgs": [
-            "-isystem",
-            "/usr/local/include",
-            "-isystem",
-            "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1",
-            "-isystem",
-            "/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include",
-            "-isystem",
-            "/Library/Developer/CommandLineTools/usr/include",
-            "-isystem",
-            "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include",
-            "-isystem",
-            "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
           ]
         }
       }

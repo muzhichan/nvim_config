@@ -175,6 +175,7 @@ if isdirectory(expand(s:plugins_dir . '/nerdcommenter'))
 
     let g:NERDAltDelims_javascript = 1
     let g:NERDDefaultNesting = 0
+    
 endif
 
 if isdirectory(expand(s:plugins_dir . '/rainbow_parentheses.vim'))

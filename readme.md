@@ -118,10 +118,27 @@ let g:maplocalleader=';'
 
 补全配置，使用 clang，可能出现头文件找不到的情况，解决方案如下：
 
-* [S 1](https://github.com/MaskRay/ccls/wiki/FAQ#some-cc-headers-are-not-recognized)
-* [S 2](https://github.com/MaskRay/ccls/wiki/Install#clang-resource-directory)
-* [S 3](https://www.reddit.com/r/neovim/comments/e6uhhf/using_ccls_server_with_cocnvim_for_c_development/)
-* [S 4](https://ianding.io/2019/07/29/configure-coc-nvim-for-c-c++-development/)
+clang 的路径输出命令：
+```
+clang -v -fsyntax-only -x c++ /dev/null
+
+clang -print-resource-dir
+```
+
+* [some-cc-headers-are-not-recognized](https://github.com/MaskRay/ccls/wiki/FAQ#some-cc-headers-are-not-recognized)
+* [clang-resource-directory](https://github.com/MaskRay/ccls/wiki/Install#clang-resource-directory)
+* [using_ccls_server_with_cocnvim_for_c_development](https://www.reddit.com/r/neovim/comments/e6uhhf/using_ccls_server_with_cocnvim_for_c_development/)
+* [configure-coc-nvim-for-c-c++-development](https://ianding.io/2019/07/29/configure-coc-nvim-for-c-c++-development/)
+
+3.2 centos7 下安装 ccls
+
+centos7 默认 clang+llvm 版本太低，可以使用 snap 进行 ccls 安装：
+```
+sudo yum install epel-release
+sudo yum install snapd
+sudo systemctl enable --now snapd.socket
+sudo ln -s /var/lib/snapd/snap /snap
+```
 
 ### 安装与使用
 
@@ -147,7 +164,7 @@ vim-gutentags
 
 ## refs
 
-* [1](https://zhuanlan.zhihu.com/p/29936003)
-* [2](https://www.zhihu.com/question/23590572/answer/546352496)
-* [3](https://juejin.im/post/5cdc396af265da03576ee968)
+* [1 如何让 vim 成为我们的神器](https://zhuanlan.zhihu.com/p/29936003)
+* [2 有哪些好用到爆的vim插件](https://www.zhihu.com/question/23590572/answer/546352496)
+* [3 C++和 Python 开发环境](https://juejin.im/post/5cdc396af265da03576ee968)
 
