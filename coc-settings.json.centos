@@ -1,0 +1,30 @@
+{
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": [
+        "c",
+        "cpp",
+        "cuda"
+      ],
+      "rootPatterns": [
+        ".ccls",
+        ".git",
+        "compile_commands.json"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/home/260249/.cache/ccls-cache"
+        },
+        "client": {
+          "snippetSupport": true
+        },
+        "clang": {
+          "resourceDir": "/opt/rh/llvm-toolset-7.0/root/usr/lib64/clang/7.0.1",
+          "extraArgs": [
+          ]
+        }
+      }
+    }
+  }
+}
