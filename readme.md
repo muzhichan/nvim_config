@@ -1,5 +1,8 @@
-连续两条命令在一起时，请按 enter 键继续，试试 `:set cmdheight=2`
 ## install
+
+```bash
+git clone https://github.com/muzhichan/nvim_config.git ~/.config/nvim
+```
 
 * pip install -U pynvim neovim
 
@@ -39,17 +42,7 @@ fc-list | grep "Hack"
 4. terminal config it
 ```
 
-## use
-
-### general
-
-```
-:se autochdir  --  含有打开的文件，这将自动切换到该目录
-
-:cd %:h  --  切换到包含当前打开文件的目录
-
-:echo getcwd()
-```
+## build-in
 
 ### buffer/window/tab
 
@@ -76,9 +69,16 @@ fc-list | grep "Hack"
   * :bp -- previous buffer
   * :bd -- close current buffer
 
-## mapping
+### shortcut and mapping
+
+键盘符号说明：
+
+```
+:h key-notation
+```
 
 在Vim中有很多默认的方式可以退出插入模式：
+
 ```
 <esc>
 <c-c>
@@ -87,32 +87,48 @@ fc-list | grep "Hack"
 terminal esc: <C-\><C-n>
 ```
 
-```
-let g:mapleader=","
-let g:maplocalleader=';'
+## custom config
 
-<leader>w  写入文件
-```
+* leader=","
+* localleader=";"
 
-## plugin and leverage
+### 键映射
 
-### 补全
+|key bind|func|
+|:------------|:-------------|
+|\<leader>w    |写入文件       |
+
+* scrooloose/nerdcommenter
+
+|key bind|func|
+|:------------|:-------------|
+|\<leader>c\<space>|注释/取消注释|
+|\<leader>cc       |注释 //       |
+|\<leader>cm       |只用一组符号注释|
+|\<leader>cA       |在行尾添加注释|
+|\<leader>c$       |/* 注释 */   |
+|\<leader>cs       |/* 块注释 */|
+|\<leader>cy       |注释并复制   |
+|\<leader>ca       |切换 // 和 /* */|
+|\<leader>cu       |取消注释     |
+
+### plugins
 
 #### Language Server Client
 
-1. LanguageClient-neovim
+**1. LanguageClient-neovim**
 
 异步，python 插件，支持大部分 language server 操作，支持 deoplete 和 ncm2 两个补全框架。
 
-2. vim-lsp
+**2. vim-lsp**
 
 异步，纯 vim script 插件，支持 asyncomplete, deoplete 和 ncm2 三个补全框架，部分 lsp 支持有问题。
 
-3. coc.nvim
+**3. coc.nvim**
 
 异步，nodejs 后端，全部 language server 操作，支持 coc.nvim 本身的补全框架。
 
-3.1 c/cpp completion
+**3.1 c/cpp completion**
 
 [ccls](https://github.com/MaskRay/ccls) + coc.nvim
 
@@ -130,7 +146,7 @@ clang -print-resource-dir
 * [using_ccls_server_with_cocnvim_for_c_development](https://www.reddit.com/r/neovim/comments/e6uhhf/using_ccls_server_with_cocnvim_for_c_development/)
 * [configure-coc-nvim-for-c-c++-development](https://ianding.io/2019/07/29/configure-coc-nvim-for-c-c++-development/)
 
-3.2 centos7 下安装 ccls
+**3.2 centos7 下安装 ccls**
 
 centos7 默认 clang+llvm 版本太低，可以使用 snap 进行 ccls 安装：
 ```
@@ -140,26 +156,27 @@ sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 ```
 
-### 安装与使用
+#### others
+
+**1. vim-gutentags**
+
+vim-gutentags, [reference](https://zhuanlan.zhihu.com/p/43671939)
+
+
+## 常见问题
+
+> 连续两条命令在一起时，请按 enter 键继续，试试 `:set cmdheight=2`
+
+
+> 一些设置项含义？
+
 
 ```
-vim-gutentags
+:se autochdir  --  含有打开的文件，这将自动切换到该目录
 
-[reference](https://zhuanlan.zhihu.com/p/43671939)
-```
+:cd %:h  --  切换到包含当前打开文件的目录
 
-```
-'scrooloose/nerdcommenter'
-
-# <leader>c<space> 注释/取消注释
-# <leader>cc // 注释
-# <leader>cm 只用一组符号注释
-# <leader>cA 在行尾添加注释
-# <leader>c$ /* 注释 */
-# <leader>cs /* 块注释 */
-# <leader>cy 注释并复制
-# <leader>ca 切换　// 和 /* */
-# <leader>cu 取消注释
+:echo getcwd()
 ```
 
 ## refs
