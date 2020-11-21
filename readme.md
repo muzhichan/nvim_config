@@ -42,6 +42,12 @@ fc-list | grep "Hack"
 4. terminal config it
 ```
 
+- 修改相关配置
+
+**python 配置**
+
+在 `config/init.vim` 中修改 `python3_host_prog` 对应路径。
+
 ## build-in
 
 ### buffer/window/tab
@@ -97,6 +103,34 @@ terminal esc: <C-\><C-n>
 |key bind|func|
 |:------------|:-------------|
 |\<leader>w    |写入文件       |
+|[b            |切换到上一 buffer|
+|[n            |切换到下一 buffer|
+|\<leader>t    |水平分屏进入 terminal|
+|\<leader>T    |垂直分屏进入 terminal|
+
+- defx.nvim
+
+|key bind|func|
+|:------------|:-------------|
+|\<localleader>e    |打开目录树|
+|\<localleader>a    |从编辑窗口回到目录树上一位置|
+
+- fzf.nvim
+
+|key bind|func|
+|:------------|:-------------|
+|\<leader>a     |全局搜索当前光标下的单词|
+|\<C-p>         |全局搜索文件|
+|\<leader>b     |搜索 buffer|
+
+- vim-clap
+
+|key bind|func|
+|:------------|:-------------|
+|\<localleader>m      |files|
+|\<localleader>j      |jump|
+|\<localleader>/      |lines|
+
 
 * scrooloose/nerdcommenter
 

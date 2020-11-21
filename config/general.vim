@@ -312,6 +312,7 @@ nnoremap tt :tab split<CR>
 " 切换 buffer
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> [n :bnext<CR>
+nnoremap <silent> [d :bd<CR>
 
 " Terminal Behavior {{{
 " --------------------
