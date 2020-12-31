@@ -82,26 +82,8 @@ function! s:main()
 			endif
 		endfor
 
-		" Python interpreter settings
-    " Python 解释器配置
-    " let l:py_version = '3.6.5'
-		" if has('nvim')
-			" Try using pyenv virtualenv called 'neovim'
-		"   let l:virtualenv = ''
-		"   if ! empty($PYENV_ROOT)
-		"     let l:virtualenv = $PYENV_ROOT . '/versions/' . l:py_version . '/bin/python'
-		"   endif
-		"   if empty(l:virtualenv) || ! filereadable(l:virtualenv)
-				" Fallback to old virtualenv location
-				"let l:virtualenv = $DATA_PATH . '/venv/neovim3/bin/python'
-				" let l:virtualenv = '/root/.pyenv/versions/' . l:py_version . '/bin/python'
-		"     let l:virtualenv = '/Users/muzhi/.pyenv/versions/' . l:py_version . '/bin/python'
-		"   endif
-		"   if filereadable(l:virtualenv)
-		"     let g:python3_host_prog = l:virtualenv
-		 "  endif
 		if has('nvim')
-			"let g:python3_host_prog = system("which python")
+			" let g:python3_host_prog = system("which python")
 			if has('mac')
 				let g:python3_host_prog = '/Users/muzhi/.pyenv/versions/' . '3.6.5' . '/bin/python'
 			elseif has('unix')
@@ -114,7 +96,6 @@ function! s:main()
 				set pyxversion=2
 			endif
 		endif
-		
 	endif
 
 	" Initializes chosen package manager
@@ -141,7 +122,7 @@ function! s:use_plug_()
 	execute 'source' expand($VIM_PATH . '/config/local.plugins.vim')
 	execute 'source' expand($VIM_PATH . '/config/plugins/all.vim')
 	" --- config/plugins ---
-  	execute 'source' expand($VIM_PATH . '/config/plugins/defx.vim')
+  execute 'source' expand($VIM_PATH . '/config/plugins/defx.vim')
 	execute 'source' expand($VIM_PATH . '/config/plugins/coc.vim')
 
 	" call plug#begin(l:cache_repos)

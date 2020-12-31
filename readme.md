@@ -190,6 +190,14 @@ sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 ```
 
+**3.3 ubuntu 下安装 ccls**
+
+```
+sudo apt install ccls
+
+ccls --version
+```
+
 #### others
 
 **1. vim-gutentags**
