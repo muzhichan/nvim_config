@@ -65,23 +65,14 @@ if has('vim_starting')
 	endif
 endif
 
-" 没有此文件
-" Load user scripts with confidential information
-" or pre-settings like g:elite_mode
-" if filereadable($VIM_PATH . '/.vault.vim')
-"	echo ".vault.vim existed..."
-"	call s:source_file('.vault.vim')
-"endif
-
 " Initialize plugin-manager and load main config files
 call s:source_file('config/init.vim')
 
 " Initialize all my configurations
-" 自己的配置
 call s:source_file('config/general.vim')
-call s:source_file('config/filetype.vim')
+"call s:source_file('config/filetype.vim')
 call s:source_file('config/mappings.vim')
-call s:source_file('config/theme.vim')
+"call s:source_file('config/theme.vim')
 "colorscheme hybrid_reverse  " change to your favorite theme
 colorscheme onedark
 
@@ -90,6 +81,5 @@ if filereadable($VIM_PATH . '/config/local.vim')
 	call s:source_file('config/local.vim')
 endif
 
-"set secure
-
 " vim: set ts=2 sw=2 tw=80 noet :
+

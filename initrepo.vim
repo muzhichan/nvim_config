@@ -516,7 +516,7 @@ if has('persistent_undo')
 	set undofile
 	set undodir=~/.config/nvim/tmp/undo,.
 endif
-set colorcolumn=80
+" set colorcolumn=80
 set updatetime=1000
 
 " Cursor shape

@@ -8,7 +8,6 @@ if &diff
     map <leader>3 :diffget REMOTE<CR>
 endif
 
-
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
@@ -36,3 +35,4 @@ inoremap <C-Space> <C-x><C-o>
 " my own map config
 set noautochdir    " 注意这个自动切换目录会使rope找目录不正确，禁用，坑死我
 "set signcolumn=no
+set cc=0
