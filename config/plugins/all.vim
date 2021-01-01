@@ -105,6 +105,8 @@ if isdirectory(expand(s:plugins_dir . '/defx.nvim'))
 	\ :<C-u>Defx -resume -toggle -buffer-name=tab`tabpagenr()`<CR>
     nnoremap <silent> <LocalLeader>a
 	\ :<C-u>Defx -resume -buffer-name=tab`tabpagenr()` -search=`expand('%:p')`<CR>
+
+    autocmd BufWritePost * call defx#redraw()
 endif
 
 "" g:indentLine
