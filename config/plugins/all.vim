@@ -219,4 +219,6 @@ elseif executable('ag')
 	let &grepprg = 'ag --vimgrep' . (&smartcase ? ' --smart-case' : '')
 endif
 
-
+if isdirectory(expand(s:plugins_dir . '/incsearch.vim'))
+    nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
+endif
