@@ -1,0 +1,33 @@
+{
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": [
+        "c",
+        "cpp",
+        "cuda"
+      ],
+      "rootPatterns": [
+        ".ccls",
+        ".git",
+        "compile_commands.json"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/home/gdd/.cache/ccls-cache"
+        },
+        "client": {
+          "snippetSupport": true
+        },
+        "clang": {
+          "resourceDir": "/usr/lib/llvm-10/lib/clang/10.0.0",
+          "extraArgs": [
+            "-isystem",
+            "/usr/local/include"
+          ]
+        }
+      }
+    }
+  }
+}
+
