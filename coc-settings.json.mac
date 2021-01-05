@@ -14,7 +14,7 @@
       ],
       "initializationOptions": {
         "cache": {
-          "directory": "/root/.cache/ccls-cache"
+          "directory": "/home/gdd/.cache/ccls-cache"
         },
         "client": {
           "snippetSupport": true
@@ -22,6 +22,8 @@
         "clang": {
           "resourceDir": "/usr/lib/llvm-10/lib/clang/10.0.0",
           "extraArgs": [
+            "-isystem",
+            "/usr/local/include"
           ]
         }
       }
