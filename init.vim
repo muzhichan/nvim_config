@@ -30,6 +30,8 @@ if has('vim_starting')
     xnoremap ;       <Nop>
 endif
 
+"" ----------------
+"" ----------------
 
 let $VIM_PATH =
     \ get(g:, 'etc_vim_path',
