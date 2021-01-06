@@ -1,4 +1,4 @@
-let s:plugins_dir = expand($DATA_PATH . "/plug/repo")
+let s:plugins_dir = expand($DATA_PATH . "/plugged")
 
 call plug#begin(s:plugins_dir)
 

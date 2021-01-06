@@ -67,8 +67,7 @@ function! s:main()
 				\ $DATA_PATH,
 				\ $DATA_PATH . '/undo',
 				\ $DATA_PATH . '/backup',
-				\ $DATA_PATH . '/session',
-				\ $VIM_PATH . '/spell' ]
+				\ $DATA_PATH . '/session']
 			if ! isdirectory(s:path)
 				call mkdir(s:path, 'p')
 			endif
