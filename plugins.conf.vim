@@ -2,13 +2,13 @@
 "let s:plugins_dir = expand($DATA_PATH . "/plug/repo")
 let s:plugins_dir = expand('~/.vim/plugged')
 
-if executable('rg')
-    set grepformat=%f:%l:%m
-    let &grepprg = 'rg --vimgrep' . (&smartcase ? ' --smart-case' : '')
-elseif executable('ag')
-    set grepformat=%f:%l:%m
-    let &grepprg = 'ag --vimgrep' . (&smartcase ? ' --smart-case' : '')
-endif
+"if executable('rg')
+"    set grepformat=%f:%l:%m
+"    let &grepprg = 'rg --vimgrep' . (&smartcase ? ' --smart-case' : '')
+"elseif executable('ag')
+"    set grepformat=%f:%l:%m
+"    let &grepprg = 'ag --vimgrep' . (&smartcase ? ' --smart-case' : '')
+"endif
 
 if isdirectory(expand(s:plugins_dir . '/vim-airline'))
     let g:airline_powerline_fonts=1
@@ -74,7 +74,7 @@ endfunction
 
 if isdirectory(expand(s:plugins_dir . '/vim-clap'))
     let g:clap_cache_directory = $DATA_PATH . '/clap'
-    "let g:clap_theme = 'material_design_dark'
+    let g:clap_theme = 'material_design_dark'
     let g:clap_layout = { 'relative': 'editor' }
     let g:clap_enable_icon = 1
     let g:clap_search_box_border_style = 'curve'
@@ -92,7 +92,8 @@ if isdirectory(expand(s:plugins_dir . '/vim-clap'))
     nnoremap <silent><LocalLeader>t :<C-u>Clap! tags<CR>
     nnoremap <silent><LocalLeader>l :<C-u>Clap! loclist<CR>
     nnoremap <silent><LocalLeader>q :<C-u>Clap! quickfix<CR>
-    nnoremap <silent><LocalLeader>m :<C-u>Clap! files ~/docs/books<CR>
+    "nnoremap <silent><LocalLeader>m :<C-u>Clap! files ~/docs/books<CR>
+    nnoremap <silent><LocalLeader>m :<C-u>Clap! files ++query=<cword><CR>
     nnoremap <silent><LocalLeader>y :<C-u>Clap! yanks<CR>
     nnoremap <silent><LocalLeader>/ :<C-u>Clap! lines<CR>
     nnoremap <silent><LocalLeader>* :<C-u>Clap! lines ++query=<cword><CR>
