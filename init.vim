@@ -56,7 +56,7 @@ if has('vim_starting')
     for s:path in [
             \ $DATA_PATH,
             \ $DATA_PATH . '/undo',
-            \ $DATA_PATH . 'backup' ]
+            \ $DATA_PATH . '/backup']
 
         if ! isdirectory(s:path)
             call mkdir(s:path, 'p')
@@ -66,7 +66,7 @@ if has('vim_starting')
     "" python host conf
     if has('nvim')
         if has('mac')
-        let g:python3_host_prog='/path/to/bin/python'
+        let g:python3_host_prog='/Users/muzhi/.pyenv/versions/' . '3.6.5' . '/bin/python'
     elseif has('unix')
         let g:python3_host_prog=''
     endif

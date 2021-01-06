@@ -71,3 +71,9 @@ cmakelists.txt 设置即可生成：
 
 如果更新 compile_commands.json 后，错误提示未消失，可使用：`:CocRestart` 命令。
 
+## QnA
+
+> update fzf?
+
+`:PlugUpdate fzf`
+
