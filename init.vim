@@ -370,9 +370,12 @@ nnoremap <silent> <A-{> :<C-u>-tabmove<CR>
 nnoremap <silent> <A-}> :<C-u>+tabmove<CR>
 
 " Buffer
-nnoremap <silent> <A-[> :bprevious<CR>
-nnoremap <silent> <A-]> :bnext<CR>
-nnoremap <silent> <A-d> :bd<CR>
+"nnoremap <silent> <A-[> :bprevious<CR>
+"nnoremap <silent> <A-]> :bnext<CR>
+"nnoremap <silent> <A-d> :bd<CR>
+nnoremap <silent> <localleader>[ :bprevious<CR>
+nnoremap <silent> <localleader>] :bnext<CR>
+nnoremap <silent> <localleader>d :bd<CR>
 
 " Drag current line/s vertically and auto-indent
 nnoremap <Leader>k :m-2<CR>

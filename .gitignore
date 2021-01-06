@@ -9,3 +9,5 @@
 /.stversions
 .vim
 .netrwhist
+coc-settings.json
+

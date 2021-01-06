@@ -50,4 +50,24 @@ apt install silversearcher-ag
 
 apt install ctags
 ```
+## ccls + coc.nvim
+
+- coc-settings.json
+
+```
+:CocConfig
+
+// or
+:CocLocalConfig
+```
+
+- compile_commands.json
+
+cmakelists.txt 设置即可生成：
+
+`set(CMAKE_EXPORT_COMPILE_COMMANDS "ON")`
+
+然后将其链接到当前项目 root。
+
+如果更新 compile_commands.json 后，错误提示未消失，可使用：`:CocRestart` 命令。
 
