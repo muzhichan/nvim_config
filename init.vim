@@ -376,6 +376,7 @@ nnoremap <silent> <A-}> :<C-u>+tabmove<CR>
 nnoremap <silent> <localleader>[ :bprevious<CR>
 nnoremap <silent> <localleader>] :bnext<CR>
 nnoremap <silent> <localleader>d :bd<CR>
+"nnoremap <silent> <LocalLeader>w :bp | bd#<CR>
 
 " Drag current line/s vertically and auto-indent
 nnoremap <Leader>k :m-2<CR>

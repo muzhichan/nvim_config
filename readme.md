@@ -71,6 +71,11 @@ cmakelists.txt 设置即可生成：
 
 如果更新 compile_commands.json 后，错误提示未消失，可使用：`:CocRestart` 命令。
 
+- .ccls
+
+如果不能生成 compile_commands.json 文件可以在项目根目录添加 `compile_commands.json` 和 `.ccls` 文件，并在 .ccls 文件中配置如下：
+https://github.com/MaskRay/ccls/wiki/Project-Setup#ccls-file
+
 ## QnA
 
 > update fzf?

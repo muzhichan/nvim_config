@@ -14,8 +14,9 @@ Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'Yggdroot/indentLine'
 
-Plug 'itchyny/vim-gitbranch'
+"Plug 'itchyny/vim-gitbranch'
 Plug 'airblade/vim-gitgutter'
+Plug 'jreybert/vimagit'
 
 Plug 'scrooloose/nerdcommenter'
 
