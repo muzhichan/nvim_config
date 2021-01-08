@@ -10,6 +10,11 @@ let s:plugins_dir = expand('~/.vim/plugged')
 "    let &grepprg = 'ag --vimgrep' . (&smartcase ? ' --smart-case' : '')
 "endif
 
+
+if isdirectory(expand(s:plugins_dir . '/vim-markdown'))
+    let g:vim_markdown_math = 1
+endif
+
 if isdirectory(expand(s:plugins_dir . '/vim-airline'))
     let g:airline_powerline_fonts=0
     "let g:airline_theme = 'wombat'
@@ -53,7 +58,7 @@ if isdirectory(expand(s:plugins_dir . '/vim-clap'))
 endif
 if isdirectory(expand(s:plugins_dir . '/vim-clap'))
     nnoremap <silent><LocalLeader>b :<C-u>Clap! buffers<CR>
-    nnoremap <silent><LocalLeader>/ :<C-u>Clap! lines<CR>
+    nnoremap <silent><LocalLeader>/ :<C-u>Clap! blines<CR>
     nnoremap <silent><LocalLeader>t :<C-u>Clap! tags<CR>
     nnoremap <silent><LocalLeader>gg :<C-u>Clap! grep<CR>
     nnoremap <silent><LocalLeader>j :<C-u>Clap! jumps<CR>

@@ -101,5 +101,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 """"""""
 Plug 'ludovicchabant/vim-gutentags'
 
+"" for markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+"" for markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+
 call plug#end()
 
