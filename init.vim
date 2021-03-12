@@ -169,7 +169,7 @@ endif
 set expandtab
 set tabstop=4       " The number of spaces a tab is
 set shiftwidth=4    " Number of spaces to use in auto(indent)
-set softtabstop=4  " Automatically keeps in sync with shiftwidth
+set softtabstop=4   " Automatically keeps in sync with shiftwidth
 set smarttab        " Tab insert blanks according to 'shiftwidth'
 set autoindent      " Use same indenting on new lines
 " set smartindent   " Smart autoindenting on new lines
@@ -387,5 +387,4 @@ vnoremap <Leader>j :m'>+<CR>gv=gv
 
 "" theme setting
 colorscheme onedark
-
 
